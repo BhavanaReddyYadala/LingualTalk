@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- TITLE -->
+
+        <!-- 🔥 NEON BORDER WRAPPER -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Create Profile"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="443dp"
+            android:layout_margin="8dp">
+
+            <!-- Neon rotating border -->
+            <View
+                android:id="@+id/neonBorder"
+                android:layout_width="match_parent"
+                android:layout_height="431dp"
+                android:background="@drawable/neon_border" />
+
+            <!-- CARD CONTENT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="426dp"
+                android:layout_margin="3dp"
+                android:background="@drawable/card_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <!-- NAME -->
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_bg"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp" />
+
+                <!-- PHONE -->
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_bg"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:padding="12dp" />
+
+                <!-- EMAIL -->
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/input_bg"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="12dp" />
+
+                <!-- GENDER -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:text="Gender" />
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioMale"
+                        android:text="Male" />
+
+                    <RadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_marginStart="20dp"
+                        android:text="Female" />
+                </RadioGroup>
+
+                <!-- LANGUAGE DROPDOWN -->
+                <Spinner
+                    android:id="@+id/spLanguage"
+                    android:text="Select Language"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:padding="10dp"
+                    android:background="@drawable/input_bg" />
+
+                <!-- BUTTON -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnContinue"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Continue"
+                    android:textAllCaps="false"
+                    app:backgroundTint="#7C3AED"
+                    app:cornerRadius="25dp" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- 🔥 NEON LINE BELOW CARD -->
+
+        <!-- PROGRESS TEXT -->
+        <TextView
+            android:id="@+id/tvProgressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile details loading"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"/>
+
+        <!-- PROGRESS BAR -->
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="100"
+            android:progress="0"
+            android:layout_marginTop="8dp"/>
+
+        <!-- PERCENT -->
+        <TextView
+            android:id="@+id/tvPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

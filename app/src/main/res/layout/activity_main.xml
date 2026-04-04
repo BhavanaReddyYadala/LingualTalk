@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Center Container -->
+    <LinearLayout
+        android:id="@+id/centerContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- PRIME -->
+        <TextView
+            android:id="@+id/tvPrime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRIME"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:textColor="@color/textPrimary"
+            android:alpha="1"
+            android:shadowColor="@color/neon"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="20"/>
+
+        <!-- TALKER -->
+        <TextView
+            android:id="@+id/tvTalker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TALKER"
+            android:textSize="20sp"
+            android:letterSpacing="0.3"
+            android:textColor="@color/neon"
+            android:layout_marginTop="8dp"
+            android:alpha="1"/>
+
+        <!-- Continue Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:minWidth="200dp"
+            android:layout_marginTop="40dp"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="28dp"
+            app:backgroundTint="@color/neon"
+            app:strokeColor="@color/neon"
+            app:strokeWidth="1dp"
+            android:elevation="8dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

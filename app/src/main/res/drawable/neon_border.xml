@@ -1,0 +1,10 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="20dp"/>  <!-- SAME as card -->
+
+    <gradient
+        android:type="sweep"
+        android:startColor="#00F0FF"
+        android:centerColor="#8A2BE2"
+        android:endColor="#FF00FF"/>
+</shape>
