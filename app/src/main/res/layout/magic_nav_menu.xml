@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="10dp"
+    android:weightSum="5">
+
+<!-- HOME -->
+    <ImageView
+        android:id="@+id/navHome"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/nav_circle_activate"
+        android:padding="15dp"
+        android:src="@drawable/ic_home"
+        android:tint="#FFFFFF"/>
+
+    <!-- CALL -->
+    <ImageView
+        android:id="@+id/navCall"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/nav_circle_activate"
+        android:padding="15dp"
+        android:src="@drawable/ic_call"
+        android:tint="#FFFFFF"/>
+
+    <!-- VIDEO -->
+
+    <!-- MESSAGE -->
+    <ImageView
+        android:id="@+id/navVideo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/nav_circle_activate"
+        android:padding="15dp"
+        android:src="@drawable/ic_video"
+        android:tint="#FFFFFF" />
+
+    <ImageView
+        android:id="@+id/navMessage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/nav_circle_activate"
+        android:padding="15dp"
+        android:src="@drawable/ic_message"
+        android:tint="#FFFFFF"/>
+
+    <!-- SETTINGS -->
+    <ImageView
+        android:id="@+id/navSettings"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:background="@drawable/nav_circle_activate"
+        android:padding="15dp"
+        android:src="@drawable/ic_settings"
+        android:tint="#FFFFFF"/>
+
+</LinearLayout>

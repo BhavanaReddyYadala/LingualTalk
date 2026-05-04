@@ -1,0 +1,22 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- OUTER GLOW -->
+    <item>
+        <shape>
+            <solid android:color="#00000000"/>
+            <corners android:radius="20dp"/>
+            <stroke
+                android:width="2dp"
+                android:color="#D09DB8"/>
+        </shape>
+    </item>
+
+    <!-- INNER WHITE BOX -->
+    <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+        <shape>
+            <solid android:color="#F3C8DD"/>
+            <corners android:radius="18dp"/>
+        </shape>
+    </item>
+
+</layer-list>
