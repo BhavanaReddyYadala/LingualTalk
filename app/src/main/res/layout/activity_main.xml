@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    android:background="@drawable/card_bg">
 
-    <!-- Center Container -->
+    <!-- CENTER CONTENT -->
     <LinearLayout
-        android:id="@+id/centerContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_centerInParent="true"
+        android:gravity="center">
 
-        <!-- PRIME -->
+        <!-- 🔥 PRIME FIXED -->
         <TextView
             android:id="@+id/tvPrime"
             android:layout_width="wrap_content"
@@ -48,7 +42,7 @@
             android:layout_marginTop="8dp"
             android:alpha="1"/>
 
-        <!-- Continue Button -->
+        <!-- BUTTON -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnContinue"
             android:layout_width="wrap_content"
@@ -67,4 +61,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

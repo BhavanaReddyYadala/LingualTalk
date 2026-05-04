@@ -1,8 +1,11 @@
 package com.example.primetalkerui
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.widget.TextView
+import android.view.View
+import android.view.animation.AnimationUtils
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 
@@ -12,19 +15,42 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val prime = findViewById<TextView>(R.id.tvPrime)
-        val talker = findViewById<TextView>(R.id.tvTalker)
-        val button = findViewById<MaterialButton>(R.id.btnContinue)
+        val button = findViewById<MaterialButton?>(R.id.btnContinue)
 
-        button.setOnClickListener {
+        button?.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 
-        // Animation
-        prime.animate().alpha(1f).setDuration(800).start()
+        // 🔥 NAVIGATION
+        val home = findViewById<ImageView?>(R.id.navHome)
+        val call = findViewById<ImageView?>(R.id.navCall)
+        val message = findViewById<ImageView?>(R.id.navMessage)
+        val video = findViewById<ImageView?>(R.id.navVideo)
+        val settings = findViewById<ImageView?>(R.id.navSettings)
 
-        talker.postDelayed({
-            talker.animate().alpha(1f).setDuration(600).start()
-        }, 400)
+        fun animate(view: View) {
+            val anim = AnimationUtils.loadAnimation(this, R.anim.nav_click)
+            view.startAnimation(anim)
+        }
+
+        home?.setOnClickListener { animate(home) }
+
+        call?.setOnClickListener {
+            animate(call)
+            startActivity(Intent(Intent.ACTION_DIAL))
+        }
+
+        message?.setOnClickListener {
+            animate(message)
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("sms:")))
+        }
+
+        video?.setOnClickListener {
+            animate(video)
+        }
+
+        settings?.setOnClickListener {
+            animate(settings)
+        }
     }
 }

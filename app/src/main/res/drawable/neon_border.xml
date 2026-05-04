@@ -1,10 +1,27 @@
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <corners android:radius="20dp"/>  <!-- SAME as card -->
+    <!-- ROTATING LAYER -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#EA8D8D"
+                android:endColor="#A890FE"
+                android:angle="0"/>
+            <corners android:radius="25dp"/>
+        </shape>
+    </item>
 
-    <gradient
-        android:type="sweep"
-        android:startColor="#00F0FF"
-        android:centerColor="#8A2BE2"
-        android:endColor="#FF00FF"/>
-</shape>
+    <!-- INNER CARD CUT -->
+    <item
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="5dp">
+
+        <shape>
+            <solid android:color="#CFE1B9"/>
+            <corners android:radius="20dp"/>
+        </shape>
+    </item>
+
+</layer-list>

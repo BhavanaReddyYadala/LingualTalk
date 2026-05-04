@@ -1,5 +1,6 @@
 package com.example.primetalkerui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
@@ -33,7 +34,7 @@ class ProfileActivity : AppCompatActivity() {
 
         // 🌐 Language list
         val languages = arrayOf(
-            "Select Language", // default empty
+            "Select Language",
             "తెలుగు", "हिन्दी", "தமிழ்", "ಕನ್ನಡ", "മലയാളം",
             "मराठी", "বাংলা", "ગુજરાતી", "ਪੰਜਾਬੀ", "اردو",
             "English", "Français", "Español", "Deutsch",
@@ -47,21 +48,19 @@ class ProfileActivity : AppCompatActivity() {
             languages
         ) {
             override fun isEnabled(position: Int): Boolean {
-                return position != 0 // ❌ Disable first item
+                return position != 0
             }
         }
 
         spinner.adapter = adapter
 
-
-
-        // 🔄 Function to update progress
+        // 🔄 Progress Update
         fun updateProgress() {
             var progress = 0
 
             if (etName.text.toString().trim().isNotEmpty()) progress += 20
-            if (etPhone.text.toString().trim().isNotEmpty()) progress += 20
-            if (etEmail.text.toString().trim().isNotEmpty()) progress += 20
+            if (etPhone.text.toString().trim().matches(Regex("^[0-9]{10}$"))) progress += 20
+            if (android.util.Patterns.EMAIL_ADDRESS.matcher(etEmail.text.toString().trim()).matches()) progress += 20
             if (radioMale.isChecked || radioFemale.isChecked) progress += 20
             if (spinner.selectedItemPosition != 0) progress += 20
 
@@ -69,7 +68,7 @@ class ProfileActivity : AppCompatActivity() {
             tvPercent.text = "$progress%"
         }
 
-        // 🔤 TextWatcher (for live updates)
+        // 🔤 Live updates
         val watcher = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) { updateProgress() }
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -87,48 +86,69 @@ class ProfileActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 updateProgress()
             }
-
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
-        // 🚀 Button validation
+        // 🚀 Continue Button
         btnContinue.setOnClickListener {
 
             val name = etName.text.toString().trim()
             val phone = etPhone.text.toString().trim()
             val email = etEmail.text.toString().trim()
 
+            // ✅ Name validation
             if (name.isEmpty()) {
                 etName.error = "Enter name"
+                etName.requestFocus()
                 return@setOnClickListener
             }
 
-            if (!name.matches(Regex("^[a-zA-Z ]+$"))) {
-                etName.error = "Only letters allowed"
+            if (!name.matches(Regex("^[A-Za-z ]+$"))) {
+                etName.error = "Only alphabets allowed"
+                etName.requestFocus()
                 return@setOnClickListener
             }
 
-            if (phone.length != 10 || !phone.all { it.isDigit() }) {
-                etPhone.error = "Enter valid number"
+            // ✅ Phone validation
+            if (!phone.matches(Regex("^[0-9]{10}$"))) {
+                etPhone.error = "Enter valid 10-digit number"
+                etPhone.requestFocus()
                 return@setOnClickListener
             }
 
+            // ✅ Email validation
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 etEmail.error = "Enter valid email"
+                etEmail.requestFocus()
                 return@setOnClickListener
             }
 
+            // ✅ Gender
             if (!radioMale.isChecked && !radioFemale.isChecked) {
                 Toast.makeText(this, "Select gender", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            // ✅ Language
             if (spinner.selectedItemPosition == 0) {
                 Toast.makeText(this, "Select language", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            // 🎉 SUCCESS
             Toast.makeText(this, "Profile Completed 🎉", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, WelcomeActivity::class.java)
+            intent.putExtra("NAME", name)
+            startActivity(intent)
+
+            // 🔥 PAGE TRANSITION ANIMATION
+            overridePendingTransition(
+                R.anim.slide_in_right,
+                R.anim.slide_out_left
+            )
+
+            // ❌ DO NOT USE finish()
         }
     }
 }
