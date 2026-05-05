@@ -16,10 +16,10 @@
 
         <!-- 🔥 PRIME FIXED -->
         <TextView
-            android:id="@+id/tvPrime"
+            android:id="@+id/tvLingual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PRIME"
+            android:text="Lingual"
             android:textSize="44sp"
             android:textStyle="bold"
             android:letterSpacing="0.08"
@@ -32,10 +32,10 @@
 
         <!-- TALKER -->
         <TextView
-            android:id="@+id/tvTalker"
+            android:id="@+id/tvTalk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TALKER"
+            android:text="TALK"
             android:textSize="20sp"
             android:letterSpacing="0.3"
             android:textColor="@color/neon"

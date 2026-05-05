@@ -1,0 +1,29 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Gradient -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="#F7F9FC"
+                android:endColor="#EAF4E1"
+                android:angle="270"/>
+        </shape>
+    </item>
+
+    <!-- Big Soft Circle -->
+    <item android:top="-100dp" android:right="-100dp">
+        <shape android:shape="oval">
+            <size android:width="300dp" android:height="300dp"/>
+            <solid android:color="#DDEED4"/>
+        </shape>
+    </item>
+
+    <!-- Small Accent Circle -->
+    <item android:bottom="-80dp" android:left="-80dp">
+        <shape android:shape="oval">
+            <size android:width="200dp" android:height="200dp"/>
+            <solid android:color="#CFE8B8"/>
+        </shape>
+    </item>
+
+</layer-list>

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PrimeTalkerUI"
+rootProject.name = "LingualTalk"
 include(":app")
  

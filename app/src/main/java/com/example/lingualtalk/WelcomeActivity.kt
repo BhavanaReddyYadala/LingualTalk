@@ -1,4 +1,4 @@
-package com.example.primetalkerui
+package com.example.lingualtalk
 
 import android.os.Bundle
 import android.view.animation.AnimationUtils

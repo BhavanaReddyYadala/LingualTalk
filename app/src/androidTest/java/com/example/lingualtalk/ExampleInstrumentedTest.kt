@@ -1,4 +1,4 @@
-package com.example.primetalkerui
+package com.example.lingualtalk
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

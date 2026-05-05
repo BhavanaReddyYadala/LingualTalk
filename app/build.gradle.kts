@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.primetalkerui"
+    namespace = "com.example.lingualtalk"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.example.primetalkerui"
+        applicationId = "com.example.lingualtalk"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

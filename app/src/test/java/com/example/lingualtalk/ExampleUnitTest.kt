@@ -1,4 +1,4 @@
-package com.example.primetalkerui
+package com.example.lingualtalk
 
 import org.junit.Test
 
